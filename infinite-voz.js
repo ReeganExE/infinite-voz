@@ -2,7 +2,7 @@
 // ==UserScript==
 // @name         Infinite Scroll VOZ
 // @namespace    http://vozforums.com/
-// @version      1.0
+// @version      1.1
 // @description  try to take over the world!
 // @author       You
 // @match        https://vozforums.com/forumdisplay.php?f=*
