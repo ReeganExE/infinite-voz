@@ -5,7 +5,17 @@ Infinite scrolling for Vozforums
 * Install [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=en)
 * Install Infinite-Voz at Greasyfork: https://greasyfork.org/en/scripts/38414-infinite-scroll-voz
 
+## Features
+* Infinitie Scroll
+* Go to any page at anytime
+* Press <kbd>F1</kbd>: toggle Quick Reply box (*quotes automatically loaded*)
+* Supports Multi quotes
+* Ability to copy Pemalink to a comment (rather than link to a single post)
+
+![image](https://user-images.githubusercontent.com/7277418/36461055-2daa3572-16ee-11e8-99fb-81934de42304.png)
+
 ## Changelog
+* v1.2 Display pemalink icon
 * v1.1 Set fixed page navigation
 * v1.0 Shortcut keys
   * Press F1 key for replying the topic (quotes automatically loaded)

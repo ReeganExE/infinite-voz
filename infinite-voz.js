@@ -2,7 +2,7 @@
 // ==UserScript==
 // @name         Infinite Scroll VOZ
 // @namespace    http://vozforums.com/
-// @version      1.1
+// @version      1.2
 // @description  try to take over the world!
 // @author       You
 // @match        https://vozforums.com/forumdisplay.php?f=*
@@ -12,7 +12,7 @@
 // @match        http://vozforums.com/showthread.php?t=*
 // @grant        GM_addStyle
 // ==/UserScript==
-GM_addStyle(".hide {display: none} .show{display: block} ");
+GM_addStyle(".hide {display: none} .show{display: block} .inlineimg.hihi { margin-left: 3px; }");
 
 (function() {
     'use strict';
@@ -26,6 +26,7 @@ GM_addStyle(".hide {display: none} .show{display: block} ");
     const BUFFER_HEIGHT = 300; // Magic number, to load next page before reach the end.
     const loadingSpinHTML = '<div class="" style="width: 100px; margin: 0 auto;">Loading... <img src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="/></div>';
     const loadingSpin = document.createElement("div");
+    const permalinkImg = () => Object.assign(new Image, { width: 16, className: 'inlineimg hihi', title: 'Copy link to this comment', src: 'https://svgshare.com/i/5cj.svg' });
     loadingSpin.innerHTML = loadingSpinHTML;
     loadingSpin.className = "hide";
 
@@ -177,6 +178,7 @@ GM_addStyle(".hide {display: none} .show{display: block} ");
           a.href = root + '#' + a.name;
           if (a.nextSibling) {
             a.appendChild(a.nextSibling);
+            a.appendChild(permalinkImg());
           }
         });
     }
