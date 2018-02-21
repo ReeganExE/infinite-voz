@@ -2,7 +2,7 @@
 // ==UserScript==
 // @name         Infinite Scroll VOZ
 // @namespace    http://vozforums.com/
-// @version      1.2
+// @version      1.2.1
 // @description  try to take over the world!
 // @author       You
 // @match        https://vozforums.com/forumdisplay.php?f=*
@@ -175,11 +175,12 @@ GM_addStyle(".hide {display: none} .show{display: block} .inlineimg.hihi { margi
         const root = [origin, pathname, search].join('');
 
         document.querySelectorAll('.thead a:not([href])').forEach(a => {
-          a.href = root + '#' + a.name;
-          if (a.nextSibling) {
-            a.appendChild(a.nextSibling);
-            a.appendChild(permalinkImg());
-          }
+            if (a.name === 'newpost') return;
+            a.href = root + '#' + a.name;
+            if (a.nextSibling) {
+                a.appendChild(a.nextSibling);
+                a.appendChild(permalinkImg());
+            }
         });
     }
 
