@@ -14,6 +14,9 @@ Infinite scrolling for Vozforums
 
 ![image](https://user-images.githubusercontent.com/7277418/36461055-2daa3572-16ee-11e8-99fb-81934de42304.png)
 
+![image](https://user-images.githubusercontent.com/7277418/38378668-9dff8960-3928-11e8-8a4d-1079303762fe.png)
+
+
 ## Changelog
 * v1.2 Display pemalink icon
 * v1.1 Set fixed page navigation
