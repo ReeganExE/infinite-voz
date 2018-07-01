@@ -1,15 +1,15 @@
 //infinite-voz.js
 // ==UserScript==
 // @name         Infinite Scroll VOZ
-// @namespace    http://vozforums.com/
-// @version      1.2.1
+// @namespace    http://forums.voz.vn/
+// @version      1.3.0
 // @description  try to take over the world!
 // @author       You
-// @match        https://vozforums.com/forumdisplay.php?f=*
-// @match        https://vozforums.com/showthread.php?t=*
-// @match        https://vozforums.com/showthread.php?p=*
-// @match        http://vozforums.com/forumdisplay.php?f=*
-// @match        http://vozforums.com/showthread.php?t=*
+// @match        https://forums.voz.vn/forumdisplay.php?f=*
+// @match        https://forums.voz.vn/showthread.php?t=*
+// @match        https://forums.voz.vn/showthread.php?p=*
+// @match        http://forums.voz.vn/forumdisplay.php?f=*
+// @match        http://forums.voz.vn/showthread.php?t=*
 // @grant        GM_addStyle
 // ==/UserScript==
 GM_addStyle(".hide {display: none} .show{display: block} .inlineimg.hihi { margin-left: 3px; }");
@@ -302,14 +302,14 @@ GM_addStyle(".hide {display: none} .show{display: block} .inlineimg.hihi { margi
     }
 
     function loadBoxPage(boxId, pageNo, callback) {
-        ajax('GET', 'https://vozforums.com/forumdisplay.php?f=' + boxId + '&order=desc&page=' + pageNo, loadSuccess);
+        ajax('GET', 'https://forums.voz.vn/forumdisplay.php?f=' + boxId + '&order=desc&page=' + pageNo, loadSuccess);
         function loadSuccess(xhr) {
             callback(parser.parseFromString(xhr.responseText, "text/html"));
         }
 	}
 
     function loadThreadPage(threadId, pageNo, callback) {
-        ajax('GET', 'https://vozforums.com/showthread.php?t=' + threadId + '&page=' + pageNo, loadSuccess);
+        ajax('GET', 'https://forums.voz.vn/showthread.php?t=' + threadId + '&page=' + pageNo, loadSuccess);
 
         function loadSuccess(xhr) {
             callback(parser.parseFromString(xhr.responseText, "text/html"));
